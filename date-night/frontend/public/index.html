@@ -26,25 +26,71 @@
     <title>React App</title>
   </head>
   <body>
-
+<!-- SIGN-UP BUTTON -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#sign-up-modal">Sign-up</a>
+<!-- USER SIGN-UP MODAL -->
+  <div id="sign-up-modal" class="modal">
+      <div class="modal-content">
+        <h4>Sign-up for our awesome wesite!</h4>
+        <div class="row">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s6">
+                  <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                  <label for="first_name">First Name</label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="last_name" type="text" class="validate">
+                  <label for="last_name">Last Name</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input class="email" type="email" class="validate">
+                  <label for="email">Email</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input class="password" type="password" class="validate">
+                  <label for="password">Password</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12">
+                  This is an inline input field:
+                  <div class="input-field inline">
+                    <input id="email_inline" type="email" class="validate">
+                    <label for="email_inline">Email</label>
+                    <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      </div>
+    </div>
 <!-- LOG-IN BUTTON -->
-  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Log-in</a>
+  <a class="waves-effect waves-light btn modal-trigger" href="#log-in-modal">Log-in</a>
 
-<!-- USER LOG IN -->
-  <div id="modal1" class="modal">
+<!-- USER LOG-IN MODAL -->
+  <div id="log-in-modal" class="modal">
     <div class="modal-content">
       <h4>User Login</h4>
       <div class="row">
           <form class="col s12">
           <div class="row">
               <div class="input-field col s12">
-                <input id="email" type="email" class="validate">
+                <input class="email" type="email" class="validate">
                 <label for="email">Email</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <input id="password" type="password" class="validate">
+                <input class="password" type="password" class="validate">
                 <label for="password">Password</label>
               </div>
             </div>
@@ -59,7 +105,8 @@
   <script>
     $(document).ready(function(){
       $(".button-collapse").sideNav({closeOnClick: true});
-      $('#modal1').modal();
+      $('#log-in-modal').modal();
+      $('#sign-up-modal').modal();
     });
    </script>
 
