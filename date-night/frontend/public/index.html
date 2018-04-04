@@ -10,6 +10,10 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -22,6 +26,44 @@
     <title>React App</title>
   </head>
   <body>
+
+<!-- LOG-IN BUTTON -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Log-in</a>
+
+<!-- USER LOG IN -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>User Login</h4>
+      <div class="row">
+          <form class="col s12">
+          <div class="row">
+              <div class="input-field col s12">
+                <input id="email" type="email" class="validate">
+                <label for="email">Email</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="password" type="password" class="validate">
+                <label for="password">Password</label>
+              </div>
+            </div>
+          </form>
+        </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Sign-in</a>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function(){
+      $(".button-collapse").sideNav({closeOnClick: true});
+      $('#modal1').modal();
+    });
+   </script>
+
+
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
