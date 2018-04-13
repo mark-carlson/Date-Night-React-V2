@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import './index.css';
 import App from './App';
-import HomePage from './Components/HomePage'
+// import HomePage from './Components/HomePage'
 import MovieNight from './Components/MovieNight'
 import Wheel from './Components/Wheel'
 import DollarDates from './Components/DollarDates'
@@ -19,7 +19,7 @@ const Root =() => {
         <Router>
             <div>
                 <Switch>
-                    <Route exact path="/" component = {HomePage} />
+                    <Route exact path="/" component = {App} />
                     <Route exact path="/movienight" component = {MovieNight} />
                     <Route exact path="/wheel" component = {Wheel} />
                     <Route exact path="/dollardates" component={DollarDates} />
