@@ -1,12 +1,15 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import Nav from "./Components/Nav";
+// import Nav from "./Components/Nav";
 
-const App = () => (
-  <div>
-    <Nav />
- 
-  </div>
-);
+class App extends React.Component{
+  render(){
+    return(
+    <div className="page">
+    this is where we want to display the page
+    </div>
+    )
+  }
+}
+
 export default App;
