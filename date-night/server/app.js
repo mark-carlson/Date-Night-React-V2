@@ -5,9 +5,11 @@ import favicon from 'serve-favicon';
 import helmet from 'helmet';
 import compression from 'compression';
 import path from 'path';
+const mongoose = require("mongoose");
+// const port = process.env.PORT || 3006;
 
 import env from './config/env';
-import routes from './routes';
+import routes from './routes/api';
 
 const app = express();
 
@@ -41,9 +43,17 @@ app.use('/static', express.static(path.join(__dirname, 'public', 'static')));
 
 /*=====  End of COR  ======*/
 
-// Routes
-app.use('/api/v1', routes.api_v1);
-app.use('/page', routes.page);
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/datenightusers", {
+  // useMongoClient: true
+});
+
+
+
+// API routes - list routes individually
+
+require('./routes/api/signin')(app);
+
+
 
 // Load React App
 // Serve HTML file for production
@@ -53,4 +63,11 @@ if (env.name === 'production') {
   });
 }
 
+// app.listen(port, "0.0.0.0", err => {
+//   if (err) {
+//     console.log(err);
+//   }
+
+//   console.info(">>> 🌎 Open http://0.0.0.0:%s/ in your browser.", port);
+// });
 export default app;
