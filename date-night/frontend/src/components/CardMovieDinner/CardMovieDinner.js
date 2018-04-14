@@ -1,24 +1,10 @@
 import React from 'react';
+import Card from '../src/Card';
+import CardTitle from '../src/CardTitle';
 
-
-import React from 'react';
-import { Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button } from 'reactstrap';
-
-const Example = (props) => {
-  return (
-    <div>
-      <Card>
-        <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
-        <CardBody>
-          <CardTitle>Card title</CardTitle>
-          <CardSubtitle>Card subtitle</CardSubtitle>
-          <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-          <Button>Button</Button>
-        </CardBody>
-      </Card>
-    </div>
-  );
-};
-
-export default Example;
+export default
+<Card className='small'
+  header={<CardTitle image='img/sample-1.jpg'>Card Title</CardTitle>}
+  actions={[<a href='#'>This is a Link</a>]}>
+  I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+</Card>;
