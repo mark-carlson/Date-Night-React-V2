@@ -110,7 +110,7 @@ class Logon extends Component {
     });
     // Post request to backend
     fetch("/api/account/signup", {
-      method: "POST",
+      method: "post",
       headers: {
         "Content-Type": "application/json"
       },
