@@ -4,7 +4,7 @@ import "whatwg-fetch";
 
 
 
-import { getFromStorage, setInStorage } from "../../utils/storage";
+import { getFromStorage, setInStorage, logout } from "../../utils/storage";
 
 class Logon extends Component {
   constructor(props) {
@@ -181,34 +181,33 @@ class Logon extends Component {
   }
 
     logout () {
+      this.setState({
+        isLoading: true,
+      });
         const obj = getFromStorage("Date_Night");
-        this.setState({
-            isLoading: true,
-        });
         if (obj && obj.token) {
           const { token } = obj;
           //verifying token
           fetch("api/account/logout?token=" + token)
             .then(res => res.json())
-            .then(JSON => {
-              if (JSON.success) {
+            .then(json => {
+              if (json.success) {
                 this.setState({
-                    token : '', 
+                    token: "", 
                     isLoading: false 
                 });
-                console.log("logout success");
+                console.log("before");
               } else {
                 this.setState({ 
                     isLoading: false 
                 });
               }
             });
-        } else {
-          this.setState({ 
+          } else {
+            this.setState({ 
               isLoading: false 
             });
-        }
-
+          } console.log('after')
     }
 
 
@@ -238,7 +237,7 @@ class Logon extends Component {
           
 
          <Row>
-                <Col s={12} m={4} offset="m0">
+                <Col s={12} m={6} offset="m3">
                     <Card
                         className="darken-1"
                         textClassName="grey-text"
@@ -261,10 +260,21 @@ class Logon extends Component {
               onChange={this.onTextboxChangeSignInPassword}
             />
             <Button waves='light' onClick={this.onSignIn}>Sign In</Button>
+               </Card>
+               <h3 className='or'> Or </h3>
+               </Col>
+     
+
+
         
+                <Col s={12} m={6} offset="m3">
+                    <Card
+                        className="darken-1"
+                        textClassName="grey-text"
+                    
+                        >
         
             {signUpError ? <p>{signUpError}</p> : null}
-
             <h4>Sign Up</h4>
             <input
               type="text"
@@ -291,9 +301,9 @@ class Logon extends Component {
               onChange={this.onTextboxChangeSignUpPassword}
             />
             <Button waves='light' onClick={this.onSignUp}>Sign up</Button>
-            </Card>
-         </Col>
-     </Row>
+        </Card>
+      </Col>
+   </Row>
       );
     }
 
@@ -307,6 +317,7 @@ class Logon extends Component {
 }
 
 export default Logon;
+
 
 
 

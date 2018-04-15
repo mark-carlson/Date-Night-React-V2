@@ -137,7 +137,6 @@ module.exports = app => {
           }
           return res.send({
             success: true,
-            message: "Valid sign on - Welcome Back!",
             token: doc._id
           });
         });
@@ -192,20 +191,20 @@ module.exports = app => {
       {
         $set: { isDeleted: true }
       },
-      null,
-      (err, sessions) => {
+      null, (err, sessions) => {
         if (err) {
           return res.send({
             success: false,
             message: "Error: server error"
           });
-        }
-
+        } else {
+        
         return res.send({
           success: true,
           message: "Logout Successful! Happy Dating!"
         });
       }
+    }
     );
   });
 };
