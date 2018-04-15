@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Button, Card, Col, Input, Row } from "react-materialize";
 import "whatwg-fetch";
+import HomePage from "../HomePage"
 
 
 
@@ -299,7 +300,7 @@ class Logon extends Component {
 
     return (
       <div>
-        <p>Account</p>
+        <HomePage />
         <button onClick={this.logout}>Logout </button>
       </div>
     );
