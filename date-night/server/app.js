@@ -9,6 +9,7 @@ const mongoose = require("mongoose");
 // const port = process.env.PORT || 3006;
 
 import env from './config/env';
+console.log('env top', env);
 import routes from './routes/api';
 
 const app = express();
@@ -44,7 +45,7 @@ app.use('/static', express.static(path.join(__dirname, 'public', 'static')));
 /*=====  End of COR  ======*/
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/datenightusers", {
-  // useMongoClient: true
+  // <useMongoClient:></useMongoClient:> true
 });
 
 
@@ -57,6 +58,7 @@ require('./routes/api/signin')(app);
 
 // Load React App
 // Serve HTML file for production
+console.log('env', env)
 if (env.name === 'production') {
   app.get('*', function response(req, res) {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));

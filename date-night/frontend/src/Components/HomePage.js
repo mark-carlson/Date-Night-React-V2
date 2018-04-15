@@ -1,9 +1,14 @@
 import React from 'react'
+import Nav from './Nav/Nav'
+import { Button, Card, Col, Input, Row } from "react-materialize"
 
 class HomePage extends React.Component{
     render(){
         return(
-            <h1>This is going to be the homepage</h1>
+            <div className="home-page">
+                <Nav />
+                <div>this is the homepage</div>
+            </div>
         )
     }
 }

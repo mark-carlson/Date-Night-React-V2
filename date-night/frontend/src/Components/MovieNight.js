@@ -1,12 +1,14 @@
 import React from 'react'
 import { Button, Table, Col, Card, CardTitle, MediaBox, Row, CardPanel, Dropdown, NavItem } from "react-materialize";
+import Nav from './Nav/Nav'
+
 
 class MovieNight extends React.Component{
     render()
     {
         return(
             <div>
-                
+                <Nav />
             <h1>This is going to be the movie night page.</h1>
             
             <Row>
