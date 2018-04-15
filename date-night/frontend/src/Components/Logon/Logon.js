@@ -5,7 +5,7 @@ import HomePage from "../HomePage"
 
 
 
-import { getFromStorage, setInStorage, logout } from "../../utils/storage";
+import { getFromStorage, setInStorage } from "../../utils/storage";
 
 class Logon extends Component {
   constructor(props) {

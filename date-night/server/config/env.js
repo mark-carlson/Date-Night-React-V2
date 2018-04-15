@@ -5,15 +5,15 @@
  */
 
 const env = {
-  'production ': {
+  production: {
     name: 'production',
     port: 4000
   },
-  'dev ': {
+  dev: {
     name: 'dev',
     port: 4000
   },
-  'test ': {
+  test: {
     name: 'test',
     port: 4000
   }
