@@ -1,4 +1,5 @@
-import React from "react";
+
+import React, { Component } from "react";
 // import Button from "react-materialize";
 import { Button } from "react-materialize";
 
@@ -8,21 +9,21 @@ const DollarDates = () => (
 
     <div className="dollar-date-container">
         <div className="title">
-            <span> Title: goes here</span>
-        </div>
-
-        <div className="photo">
-            <span> Photo: <img src="http://via.placeholder.com/200x200" /></span>
+            <span> <strong>Title:</strong> Take a hike</span>
         </div>
 
         <div className="description">
-            <span> Description: goes here</span>
+            <span> Description: A day trip to the trails is a great way to enjoy beautiful landscapes, chat, and sneak in some exercise while you’re at it. </span>
         </div>
         
         <div className="cost">
-            <span> Cost: goes here</span>
+            <span> Cost: 0</span>
         </div>
-        <Button>hiiii</Button>
+
+        <div className="photo">
+            <span><img src="http://via.placeholder.com/350x150" /></span>
+        </div>
+
     </div>
 
   );

@@ -1,20 +1,19 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 import Nav from "./Components/Nav";
 import Logon from "./Components/Logon";
-import DollarDates from "./Components/DollarDates/DollarDates";
-import HelloTest from "./Components/HelloTest/HelloTest"
+// import DollarDates from "./Components/DollarDates/DollarDates";
 
-const App = () => (
-  <div>
-    <Nav />
-    <Logon />
-    <DollarDates />
-    <DollarDates />
-    <HelloTest />
-  </div>
 
-  
-);
+class App extends React.Component{
+  render(){
+    return(
+    <div className="page">
+      <Nav />
+      <Logon />
+    </div>
+    )
+  }
+}
+
 export default App;
