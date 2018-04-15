@@ -3,6 +3,7 @@ const UserSessions = require("../../models/UserSessions");
 
 module.exports = app => {
   app.post("/api/account/signup", (req, res, next) => {
+    console.log('req.body', req.body);
     const { body } = req;
     const { firstName, lastName, password } = body;
     let { email } = body;
@@ -70,10 +71,11 @@ module.exports = app => {
               message: "Error: Server error2"
             });
           }
-
+          console.log('successful add');
           return res.send({
             success: true,
-            message: "Sign Up Successful!"
+            message: "Sign Up Successful!",
+            user
           });
         });
       }
