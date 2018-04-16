@@ -1,6 +1,8 @@
 import React from 'react'
 import { Button, Table, Col, Card, CardTitle, MediaBox, Row, CardPanel, Dropdown, NavItem } from "react-materialize";
 import Nav from './Nav/Nav'
+import {searchRestaurant} from "../helpers"
+
 
 
 class MovieNight extends React.Component{
@@ -8,6 +10,7 @@ class MovieNight extends React.Component{
     {
         return(
             <div>
+            {searchRestaurant()}
                 <Nav />
             <h1>This is going to be the movie night page.</h1>
             
