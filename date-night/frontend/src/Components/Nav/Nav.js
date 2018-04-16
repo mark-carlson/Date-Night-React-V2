@@ -2,6 +2,7 @@ import React from "react";
 import "./Nav.css";
 import Logon from "../Logon/Logon.js"
 
+
 console.log(Logon.constructor())
 
 const Nav = () => (
