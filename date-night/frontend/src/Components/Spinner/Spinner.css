@@ -131,8 +131,13 @@ a{
 	z-index: 10000000;
 	display: block;
 	text-align: center;
+<<<<<<< HEAD
 	font-size:36px;
 	margin-left:-30px;
+=======
+	font-size:12px;
+	margin-left:-15px;
+>>>>>>> d2a804c4bed8fc05fcc52040e6a7937eb1b28ebe
 	
 	text-shadow: rgba(255, 255, 255, 0.1) 0px -1px 0px, rgba(0, 0, 0, 0.2) 0px 1px 0px;
 }
@@ -270,6 +275,9 @@ opacity:0.1;
     animation: hh 0.1s;
 }
 
+#netflix {
+	font-size:10px;
+}
 
 
 
