@@ -2,14 +2,13 @@ import React from "react";
 import "./Nav.css";
 import Logon from "../Logon/Logon.js"
 
-
-console.log(Logon.constructor())
+// console.log(Logon.constructor())
 
 const Nav = () => (
   <nav>
-    <div class="nav-wrapper">
-      <a href="/homepage" class="brand-logo"><img src= "../../../img/logo.png" /></a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
+    <div className="nav-wrapper">
+      <a href="/homepage" className="brand-logo"><img src= "../../../img/logo.png" /></a>
+      <ul id="nav-mobile" className="right hide-on-med-and-down">
         <li><a href="/movienight">Dinner & Movie</a></li>
         <li><a href="/wheel">Spin the Wheel</a></li>
         <li><a href="/dollardates">Dollar Dates</a></li>
