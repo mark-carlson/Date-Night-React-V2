@@ -30,13 +30,12 @@ export function searchRestaurant(argument) {
         console.log('randomFoodResult', randomFoodResult);
         //Create variables from the ajax call to display restaurant info into the DOM
         var fName = randomFoodResult.name;
-        var fLocation = randomFoodResult.location;
-        var fRating = randomFoodResult.rating;
-        var fPhone = randomFoodResult.display_phone;
+        // var fLocation = randomFoodResult.location;
+        // var fRating = randomFoodResult.rating;
+        // var fPhone = randomFoodResult.display_phone;
         
         //Display results in the DOM
         $('#yelpResults').html(fName);
     })
-    
 }
 
