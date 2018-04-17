@@ -24,7 +24,7 @@ a{
 }
 
 #txt{
-	color:#eaeaea;	
+	color:black;	
 }
 
 
@@ -69,8 +69,8 @@ a{
 	border-width: 130px 75px 0;
 	border-color: #19c transparent;
 	transform-origin: 75px 129px;
-	left:50px;
-	top:-4px;	
+	left:40px;
+	top:-10px;	
 	opacity:1;
 }
 
@@ -132,7 +132,7 @@ a{
 	display: block;
 	text-align: center;
 	font-size:36px;
-	margin-left:-15px;
+	margin-left:-30px;
 	
 	text-shadow: rgba(255, 255, 255, 0.1) 0px -1px 0px, rgba(0, 0, 0, 0.2) 0px 1px 0px;
 }
