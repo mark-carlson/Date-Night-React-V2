@@ -3,10 +3,15 @@ import { Button, Card, Col, Input, Row, Modal, Slider, Slide } from "react-mater
 import "whatwg-fetch";
 import HomePage from "../HomePage"
 import "./Logon.css"
+<<<<<<< HEAD
 
 
 
 import { getFromStorage, setInStorage } from "../../utils/storage";
+=======
+import { getFromStorage, setInStorage } from "../../utils/storage";
+import Container from "../Container/Container"
+>>>>>>> 01a167eacc1b8b58c1b9ec43f62a62a49f9cf8ed
 
 class Logon extends Component {
   constructor(props) {
@@ -182,7 +187,11 @@ class Logon extends Component {
       });
   }
 
+<<<<<<< HEAD
     logout () {
+=======
+    logout() {
+>>>>>>> 01a167eacc1b8b58c1b9ec43f62a62a49f9cf8ed
       this.setState({
         isLoading: true,
       });
@@ -236,11 +245,19 @@ class Logon extends Component {
     }
     if (!token) {
       return (
+<<<<<<< HEAD
         <div>
 
         <div>
           <Modal 
           trigger={<Button>Sign In</Button>}>
+=======
+ 
+
+        <div>
+          <Modal 
+          trigger={<Button className="container">Sign In</Button>}>
+>>>>>>> 01a167eacc1b8b58c1b9ec43f62a62a49f9cf8ed
             {signInError ? <p>{signInError}</p> : null}
             <h4>Welcome Back</h4>
             <input type="email" placeholder="Email" value={signInEmail} onChange={this.onTextboxChangeSignInEmail} />
@@ -249,10 +266,17 @@ class Logon extends Component {
               Sign In
             </Button>
           </Modal>
+<<<<<<< HEAD
         </div>
         <div>
           <Modal
            trigger={<Button>Sign Up</Button>}>
+=======
+       
+     
+          <Modal
+           trigger={<Button className="container">Sign Up</Button>}>
+>>>>>>> 01a167eacc1b8b58c1b9ec43f62a62a49f9cf8ed
             {signUpError ? <p>{signUpError}</p> : null}
             <h4>Please sign up</h4>
             <input type="text" placeholder="First Name" value={signUpFirstName} onChange={this.onTextboxChangeSignUpFirstName} />
@@ -263,8 +287,12 @@ class Logon extends Component {
               Sign up
             </Button>
           </Modal>
+<<<<<<< HEAD
         </div>
         <div>
+=======
+        
+>>>>>>> 01a167eacc1b8b58c1b9ec43f62a62a49f9cf8ed
           <Slider>
             <Slide src="../../../img/dinner.jpg" title="Date Night">
               Perfect dates start here
@@ -277,14 +305,24 @@ class Logon extends Component {
             </Slide>
           </Slider>
           </div>
+<<<<<<< HEAD
         </div>);
+=======
+     
+      );
+>>>>>>> 01a167eacc1b8b58c1b9ec43f62a62a49f9cf8ed
 
     }
 
     return (
       <div>
+<<<<<<< HEAD
         <HomePage />
         <Button waves="light" onClick={this.logout}>Logout </Button>
+=======
+        <HomePage logout={this.logout}/>
+       
+>>>>>>> 01a167eacc1b8b58c1b9ec43f62a62a49f9cf8ed
       </div>
     );
   }

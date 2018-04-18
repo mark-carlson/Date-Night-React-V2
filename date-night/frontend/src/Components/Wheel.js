@@ -6,6 +6,7 @@ import Spinner from "./Spinner/Spinner"
 
 class Wheel extends React.Component{
     render(){
+<<<<<<< HEAD
         return(
             <div className="wheel-page">
                 <Nav />
@@ -13,6 +14,12 @@ class Wheel extends React.Component{
 
             </div>
         )
+=======
+        return <div className="wheel-page">
+            <Nav logout={this.props.logout}/>
+            <Spinner />
+          </div>;
+>>>>>>> 01a167eacc1b8b58c1b9ec43f62a62a49f9cf8ed
     }
 }
 

@@ -14,4 +14,11 @@ h5 {
 
 input {
     color: black;
+<<<<<<< HEAD
+=======
+}
+
+.container {
+    align-items: left;
+>>>>>>> 01a167eacc1b8b58c1b9ec43f62a62a49f9cf8ed
 }

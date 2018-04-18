@@ -9,7 +9,7 @@ const env = {
     name: 'production',
     port: 4000
   },
-  dev: {
+   dev: {
     name: 'dev',
     port: 4000
   },
@@ -18,4 +18,5 @@ const env = {
     port: 4000
   }
 };
+
 export default env[process.env.NODE_ENV];
