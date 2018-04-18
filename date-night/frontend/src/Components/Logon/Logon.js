@@ -4,6 +4,7 @@ import "whatwg-fetch";
 import HomePage from "../HomePage"
 import "./Logon.css"
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 
@@ -12,6 +13,12 @@ import { getFromStorage, setInStorage } from "../../utils/storage";
 import { getFromStorage, setInStorage } from "../../utils/storage";
 import Container from "../Container/Container"
 >>>>>>> 01a167eacc1b8b58c1b9ec43f62a62a49f9cf8ed
+=======
+
+
+
+import { getFromStorage, setInStorage } from "../../utils/storage";
+>>>>>>> parent of 43537c1... Merge pull request #18 from G-Austin/logonJS
 
 class Logon extends Component {
   constructor(props) {
@@ -188,10 +195,14 @@ class Logon extends Component {
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     logout () {
 =======
     logout() {
 >>>>>>> 01a167eacc1b8b58c1b9ec43f62a62a49f9cf8ed
+=======
+    logout () {
+>>>>>>> parent of 43537c1... Merge pull request #18 from G-Austin/logonJS
       this.setState({
         isLoading: true,
       });
@@ -246,6 +257,7 @@ class Logon extends Component {
     if (!token) {
       return (
 <<<<<<< HEAD
+<<<<<<< HEAD
         <div>
 
         <div>
@@ -258,6 +270,13 @@ class Logon extends Component {
           <Modal 
           trigger={<Button className="container">Sign In</Button>}>
 >>>>>>> 01a167eacc1b8b58c1b9ec43f62a62a49f9cf8ed
+=======
+        <div>
+
+        <div>
+          <Modal 
+          trigger={<Button>Sign In</Button>}>
+>>>>>>> parent of 43537c1... Merge pull request #18 from G-Austin/logonJS
             {signInError ? <p>{signInError}</p> : null}
             <h4>Welcome Back</h4>
             <input type="email" placeholder="Email" value={signInEmail} onChange={this.onTextboxChangeSignInEmail} />
@@ -266,6 +285,7 @@ class Logon extends Component {
               Sign In
             </Button>
           </Modal>
+<<<<<<< HEAD
 <<<<<<< HEAD
         </div>
         <div>
@@ -277,6 +297,12 @@ class Logon extends Component {
           <Modal
            trigger={<Button className="container">Sign Up</Button>}>
 >>>>>>> 01a167eacc1b8b58c1b9ec43f62a62a49f9cf8ed
+=======
+        </div>
+        <div>
+          <Modal
+           trigger={<Button>Sign Up</Button>}>
+>>>>>>> parent of 43537c1... Merge pull request #18 from G-Austin/logonJS
             {signUpError ? <p>{signUpError}</p> : null}
             <h4>Please sign up</h4>
             <input type="text" placeholder="First Name" value={signUpFirstName} onChange={this.onTextboxChangeSignUpFirstName} />
@@ -288,11 +314,16 @@ class Logon extends Component {
             </Button>
           </Modal>
 <<<<<<< HEAD
+<<<<<<< HEAD
         </div>
         <div>
 =======
         
 >>>>>>> 01a167eacc1b8b58c1b9ec43f62a62a49f9cf8ed
+=======
+        </div>
+        <div>
+>>>>>>> parent of 43537c1... Merge pull request #18 from G-Austin/logonJS
           <Slider>
             <Slide src="../../../img/dinner.jpg" title="Date Night">
               Perfect dates start here
@@ -306,16 +337,21 @@ class Logon extends Component {
           </Slider>
           </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
         </div>);
 =======
      
       );
 >>>>>>> 01a167eacc1b8b58c1b9ec43f62a62a49f9cf8ed
+=======
+        </div>);
+>>>>>>> parent of 43537c1... Merge pull request #18 from G-Austin/logonJS
 
     }
 
     return (
       <div>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <HomePage />
         <Button waves="light" onClick={this.logout}>Logout </Button>
@@ -323,6 +359,10 @@ class Logon extends Component {
         <HomePage logout={this.logout}/>
        
 >>>>>>> 01a167eacc1b8b58c1b9ec43f62a62a49f9cf8ed
+=======
+        <HomePage />
+        <Button waves="light" onClick={this.logout}>Logout </Button>
+>>>>>>> parent of 43537c1... Merge pull request #18 from G-Austin/logonJS
       </div>
     );
   }
