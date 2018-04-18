@@ -3,10 +3,8 @@ import { Button, Card, Col, Input, Row, Modal, Slider, Slide } from "react-mater
 import "whatwg-fetch";
 import HomePage from "../HomePage"
 import "./Logon.css"
-
-
-
 import { getFromStorage, setInStorage } from "../../utils/storage";
+import Container from "../Container/Container"
 
 class Logon extends Component {
   constructor(props) {
@@ -182,7 +180,7 @@ class Logon extends Component {
       });
   }
 
-    logout () {
+    logout() {
       this.setState({
         isLoading: true,
       });
@@ -236,11 +234,11 @@ class Logon extends Component {
     }
     if (!token) {
       return (
-        <div>
+ 
 
         <div>
           <Modal 
-          trigger={<Button>Sign In</Button>}>
+          trigger={<Button className="container">Sign In</Button>}>
             {signInError ? <p>{signInError}</p> : null}
             <h4>Welcome Back</h4>
             <input type="email" placeholder="Email" value={signInEmail} onChange={this.onTextboxChangeSignInEmail} />
@@ -249,10 +247,10 @@ class Logon extends Component {
               Sign In
             </Button>
           </Modal>
-        </div>
-        <div>
+       
+     
           <Modal
-           trigger={<Button>Sign Up</Button>}>
+           trigger={<Button className="container">Sign Up</Button>}>
             {signUpError ? <p>{signUpError}</p> : null}
             <h4>Please sign up</h4>
             <input type="text" placeholder="First Name" value={signUpFirstName} onChange={this.onTextboxChangeSignUpFirstName} />
@@ -263,8 +261,7 @@ class Logon extends Component {
               Sign up
             </Button>
           </Modal>
-        </div>
-        <div>
+        
           <Slider>
             <Slide src="../../../img/dinner.jpg" title="Date Night">
               Perfect dates start here
@@ -277,14 +274,15 @@ class Logon extends Component {
             </Slide>
           </Slider>
           </div>
-        </div>);
+     
+      );
 
     }
 
     return (
       <div>
-        <HomePage />
-        <Button waves="light" onClick={this.logout}>Logout </Button>
+        <HomePage logout={this.logout}/>
+       
       </div>
     );
   }

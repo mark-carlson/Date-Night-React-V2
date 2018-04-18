@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 // import { findDOMNode } from "react-dom";
-// import $ from "jquery";
 import "./Spinner.css";
 // import {Component} from "react-materialize"
-
-// <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
 class Spinner extends Component {
 
