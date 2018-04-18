@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Button, Table, Col, Card, CardTitle, MediaBox, Row, CardPanel, Dropdown, NavItem } from "react-materialize";
 import Nav from './Nav/Nav'
 import {searchRestaurant} from "../helpers"
