@@ -22,12 +22,34 @@ class Root extends Component {
     }
 
     setWheelDate = (date) => {
-        this.state.wheelDate = date;
-        //TODO: Make API call here
+        this.setState({
+            wheelDate: date
+        });
+        //TODO: Make API call here using the date from the wheel
+        /**
+         * fetch('path/to/api', {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            method: 'post',
+            body: JSON.stringify({
+                date
+            })
+        }).then((res) => {
+            if (res.status === 503) {
+                this.setState({
+                    //set error state here
+                });
+            }
+            return res.json();
+        }).then((data) => {
+            //set state with data received from API
+        });
+         */
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        this.state.wheelDate = nextProps.wheelDate;
         return false;
     }
 

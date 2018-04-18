@@ -19,7 +19,7 @@ class Spinner extends Component {
 	}
 
 	spinAction = () => {
-		const click = ++this.state.click;
+		const click = this.state.click + 1;
 		let wheelDate = '';
 
 		const newDegree = this.state.degree * this.state.click;
@@ -27,22 +27,22 @@ class Spinner extends Component {
 		const totalDegree = newDegree + extraDegree;
 
 		switch (true) {
-			case extraDegree > 270 && extraDegree < 330:
+			case extraDegree >= 270 && extraDegree < 330:
 				wheelDate = 'zoo';
 				break;
-			case extraDegree > 30 && extraDegree < 90:
+			case extraDegree >= 30 && extraDegree < 90:
 				wheelDate = 'archery';
 				break;
-			case extraDegree > 90 && extraDegree < 150:
+			case extraDegree >= 90 && extraDegree < 150:
 				wheelDate = 'bar';
 				break;
-			case extraDegree > 150 && extraDegree < 210:
+			case extraDegree >= 150 && extraDegree < 210:
 				wheelDate = 'concert';
 				break;
-			case extraDegree > 210 && extraDegree < 270:
+			case extraDegree >= 210 && extraDegree < 270:
 				wheelDate = 'karaoke';
 				break;
-			case true:
+			default:
 				wheelDate = 'museum';
 		}
 

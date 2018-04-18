@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import Nav from './Nav/Nav'
 import { Button, Card, Col, Input, Row } from "react-materialize"
 import Spinner from "./Spinner/Spinner"
