@@ -27,7 +27,6 @@
   to { transform: rotate(360deg); }
 }
 
-
 /* LL css */
 
 .mainBG {
@@ -86,5 +85,9 @@ padding: 3px 5px;
   padding-top: 10px;
   padding-bottom:5px;
   vertical-align: middle;
+}
+
+.or {
+  color: rgb(62, 126, 117);
 }
 

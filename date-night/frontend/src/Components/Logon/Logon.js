@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import { Button, Card, Col, Input, Row } from "react-materialize";
+import { Button, Card, Col, Input, Row, Modal, Slider, Slide } from "react-materialize";
 import "whatwg-fetch";
 import HomePage from "../HomePage"
-
-
-
+import "./Logon.css"
 import { getFromStorage, setInStorage } from "../../utils/storage";
+import Container from "../Container/Container"
 
 class Logon extends Component {
   constructor(props) {
@@ -181,35 +180,34 @@ class Logon extends Component {
       });
   }
 
-    logout () {
+    logout() {
+      this.setState({
+        isLoading: true,
+      });
         const obj = getFromStorage("Date_Night");
-        this.setState({
-            isLoading: true,
-        });
         if (obj && obj.token) {
           const { token } = obj;
           //verifying token
           fetch("api/account/logout?token=" + token)
             .then(res => res.json())
-            .then(JSON => {
-              if (JSON.success) {
+            .then(json => {
+              if (json.success) {
                 this.setState({
-                    token : '', 
+                    token: "", 
                     isLoading: false 
                 });
-                console.log("logout success");
+                console.log("before");
               } else {
                 this.setState({ 
                     isLoading: false 
                 });
               }
             });
-        } else {
-          this.setState({ 
+          } else {
+            this.setState({ 
               isLoading: false 
             });
-        }
-
+          } console.log('after')
     }
 
 
@@ -236,78 +234,62 @@ class Logon extends Component {
     }
     if (!token) {
       return (
-          
+ 
 
-         <Row>
-                <Col s={12} m={4} offset="m0">
-                    <Card
-                        className="darken-1"
-                        textClassName="grey-text"
-                    
-                        >
-                        
-        
+        <div>
+          <Modal 
+          trigger={<Button className="container">Sign In</Button>}>
             {signInError ? <p>{signInError}</p> : null}
-            <h4>Sign In</h4>
-            <input
-              type="email"
-              placeholder="Email"
-              value={signInEmail}
-              onChange={this.onTextboxChangeSignInEmail}
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              value={signInPassword}
-              onChange={this.onTextboxChangeSignInPassword}
-            />
-            <Button waves='light' onClick={this.onSignIn}>Sign In</Button>
-        
-        
+            <h4>Welcome Back</h4>
+            <input type="email" placeholder="Email" value={signInEmail} onChange={this.onTextboxChangeSignInEmail} />
+            <input type="password" placeholder="Password" value={signInPassword} onChange={this.onTextboxChangeSignInPassword} />
+            <Button waves="light" onClick={this.onSignIn}>
+              Sign In
+            </Button>
+          </Modal>
+       
+     
+          <Modal
+           trigger={<Button className="container">Sign Up</Button>}>
             {signUpError ? <p>{signUpError}</p> : null}
-
-            <h4>Sign Up</h4>
-            <input
-              type="text"
-              placeholder="First Name"
-              value={signUpFirstName}
-              onChange={this.onTextboxChangeSignUpFirstName}
-            />
-            <input
-              type="text"
-              placeholder="Last Name"
-              value={signUpLastName}
-              onChange={this.onTextboxChangeSignUpLastName}
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              value={signUpEmail}
-              onChange={this.onTextboxChangeSignUpEmail}
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              value={signUpPassword}
-              onChange={this.onTextboxChangeSignUpPassword}
-            />
-            <Button waves='light' onClick={this.onSignUp}>Sign up</Button>
-            </Card>
-         </Col>
-     </Row>
+            <h4>Please sign up</h4>
+            <input type="text" placeholder="First Name" value={signUpFirstName} onChange={this.onTextboxChangeSignUpFirstName} />
+            <input type="text" placeholder="Last Name" value={signUpLastName} onChange={this.onTextboxChangeSignUpLastName} />
+            <input type="email" placeholder="Email" value={signUpEmail} onChange={this.onTextboxChangeSignUpEmail} />
+            <input type="password" placeholder="Password" value={signUpPassword} onChange={this.onTextboxChangeSignUpPassword} />
+            <Button waves="light" onClick={this.onSignUp}>
+              Sign up
+            </Button>
+          </Modal>
+        
+          <Slider>
+            <Slide src="../../../img/dinner.jpg" title="Date Night">
+              Perfect dates start here
+            </Slide>
+            <Slide src="../../../img/theatre.jpg" title="Indecisive?" placement="left">
+              We'll help you find the perfect Dinner & Movie date
+            </Slide>
+            <Slide src="./../../img/picnic.jpg" title="Want Something Different?" placement="right">
+              We'll give you some out of the box ideas
+            </Slide>
+          </Slider>
+          </div>
+     
       );
+
     }
 
     return (
       <div>
-        <HomePage />
-        <button onClick={this.logout}>Logout </button>
+        <HomePage logout={this.logout}/>
+       
       </div>
     );
   }
 }
 
 export default Logon;
+
 
 
 
