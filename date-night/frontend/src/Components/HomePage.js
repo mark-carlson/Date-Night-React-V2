@@ -8,14 +8,11 @@ class HomePage extends React.Component{
         return(
             <div className="home-page">
                 <Nav />
-                <div>this is the homepage</div>
-            </div>
-
-
-        <div class="circles-parent">
+                
+                <div class="circles-parent">
                     
-            <div class="square"><img src="/img/moviedinner.jpg" style={{width: 250, height: 200}} /> 
-            <p>Dinner & Movie</p>
+                <div class="square"><img src="/img/moviedinner.jpg" style={{width: 250, height: 200}} /> 
+                <p>Dinner & Movie</p>
             </div>
                     
         
@@ -39,7 +36,7 @@ class HomePage extends React.Component{
         </div> 
         </div>
 
-         </div>       
+        
                     
 
         )
