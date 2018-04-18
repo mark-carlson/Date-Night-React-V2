@@ -15,21 +15,38 @@ import Logon from './Components/Logon'
 // ReactDOM.render(<App />, document.getElementById('root'));
 // registerServiceWorker();
 
-const Root =() => {
-    return(
-        <Router>
-            <div>
-                <Switch>
-                    <Route exact path="/" component = {App} />
-                    <Route exact path="/movienight" component = {MovieNight} />
-                    <Route exact path="/wheel" component = {Wheel} />
-                    <Route exact path="/dollardates" component={DollarDates} />
-                    <Route exact path="/homepage" component = {HomePage} />
-                    <Route component={NoMatch} />
-                </Switch>
-            </div>
-        </Router>
-    )
+class Root extends Component {
+    state = {
+        wheelDate: '',
+        movieDate: ''
+    }
+
+    setWheelDate = (date) => {
+        this.state.wheelDate = date;
+        //TODO: Make API call here
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        this.state.wheelDate = nextProps.wheelDate;
+        return false;
+    }
+
+    render() {
+        return(
+            <Router>
+                <div>
+                    <Switch>
+                        <Route exact path="/" component = {App} />
+                        <Route exact path="/movienight" component = {MovieNight} />
+                        <Route exact path="/wheel" component={() => (<Wheel setWheelDate={this.setWheelDate} />)} />
+                        <Route exact path="/dollardates" component={DollarDates} />
+                        <Route exact path="/homepage" component = {HomePage} />
+                        <Route component={NoMatch} />
+                    </Switch>
+                </div>
+            </Router>
+        )
+    }
 }
 
 

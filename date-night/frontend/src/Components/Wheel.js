@@ -1,16 +1,20 @@
-import React from 'react'
+import React, { Component, PropTypes } from 'react'
 import Nav from './Nav/Nav'
 import { Button, Card, Col, Input, Row } from "react-materialize"
 import Spinner from "./Spinner/Spinner"
 // import {test} from "../helpers"
 
-class Wheel extends React.Component{
+class Wheel extends Component {
+
+    constructor(props) {
+        super(props);
+    }
+
     render(){
         return(
             <div className="wheel-page">
                 <Nav />
-                <Spinner />
-
+                <Spinner setWheelDate={this.props.setWheelDate} />
             </div>
         )
     }
