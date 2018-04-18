@@ -26,3 +26,65 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+/* LL css */
+
+.mainBG {
+  background-image: url("/img/bg1.jpg");
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  vertical-align:middle;
+  text-align:center;
+  background-size: 100%;
+}
+
+.divCenter {
+  position: absolute;
+   top: 50%;
+   left: 50%;
+  
+   margin-top: -52px; /* Half the height */
+   margin-left: -414px; /* Half the width */  
+}
+
+.block {
+  background: orange;
+  height: 50px;
+  text-align:center;
+}
+  
+.inner {
+display: inline-block;
+vertical-align: middle;
+background: yellow;
+padding: 3px 5px;
+}
+  
+.circles-parent { text-align:center; }
+
+.square {
+  display:inline-block;
+  margin:0 15px;
+  background: yellow;
+  height: 300px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.square p  {
+  background: yellow;
+  font-size: 24px;
+
+}
+
+.content h2 {
+  background: yellow;
+  margin-top: 100px;
+  padding-top: 10px;
+  padding-bottom:5px;
+  vertical-align: middle;
+}
+
