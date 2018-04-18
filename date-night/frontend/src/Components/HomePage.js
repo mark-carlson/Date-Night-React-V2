@@ -6,22 +6,9 @@ import "../App.css";
 class HomePage extends React.Component{
     render(){
         return(
-
-
-             
-        <div className="home-page">
-        <Nav />
-
-            <div className="mainBG">
-        <div class="content" >
-
-
-            <div class="row">
-                <div class="row">
-                    <div class="col s12 m4 l2"><p></p></div>
-                    <div class="col s12 m4 l8"><p><h2>Find the Best Date Places in Town</h2></p></div>
-                    <div class="col s12 m4 l2"><p></p></div>
-                </div>
+            <div className="home-page">
+                <Nav />
+                <div>this is the homepage</div>
             </div>
 
 
