@@ -15,3 +15,7 @@ h5 {
 input {
     color: black;
 }
+
+.container {
+    align-items: left;
+}

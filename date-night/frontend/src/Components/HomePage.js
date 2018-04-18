@@ -6,7 +6,7 @@ class HomePage extends React.Component{
     render(){
         return(
             <div className="home-page">
-                <Nav />
+                <Nav logout={this.props.logout}/>
                 <div>this is the homepage</div>
             </div>
         )
