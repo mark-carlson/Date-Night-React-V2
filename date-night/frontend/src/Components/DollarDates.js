@@ -43,6 +43,12 @@ class DollarDates extends React.Component{
 
     </div>
         )
+
+        return <div className="dollar-page">
+            <Nav logout={this.props.logout}/>
+            <h1>This is going to be the dollar dates page</h1>
+          </div>;
+
     }
 }
 
