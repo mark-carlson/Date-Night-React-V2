@@ -4,7 +4,7 @@ import "whatwg-fetch";
 import HomePage from "../HomePage";
 import "./Logon.css";
 import { getFromStorage, setInStorage } from "../../utils/storage";
-import Container from "../Container/Container";
+// import Container from "../Container/Container";
 
 class Logon extends Component {
   constructor(props) {
@@ -237,7 +237,7 @@ class Logon extends Component {
       return (
           <div className="screen">
           
-              <Modal trigger={<Button className="container">
+              <Modal trigger={<Button className="container2">
                     Sign In
                   </Button>}>
                 {signInError ? <p>{signInError}</p> : null}

@@ -30,7 +30,7 @@
 /* LL css */
 
 .mainBG {
-  background-image: url("/img/bg1.jpg");
+  background-image: url("/img/bg7.jpg");
   background-repeat: no-repeat;
   height: 100%;
   width: 100%;
@@ -38,6 +38,7 @@
   vertical-align:middle;
   text-align:center;
   background-size: 100%;
+  position: absolute;
 }
 
 .divCenter {
@@ -68,26 +69,61 @@ padding: 3px 5px;
   display:inline-block;
   margin:0 15px;
   background: yellow;
-  height: 300px;
-  margin-top: 50px;
+  height: 250px;
+  margin-top: 30px;
   margin-bottom: 100px;
+
 }
 
 .square p  {
   background: yellow;
   font-size: 24px;
-
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .content h2 {
-  background: yellow;
   margin-top: 100px;
   padding-top: 10px;
   padding-bottom:5px;
   vertical-align: middle;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.or {
-  color: rgb(62, 126, 117);
+.Footer {
+  background-color: teal;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 50px;
+  font-size: 13px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+h2 {
+  color: black;
+}
+
+.dollardatescard {
+  text-align:center;
+}
+
+.dollardatescard-inner {
+  display:inline-block;
+}
+
+h3 {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dollardatetitle {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 26px;
+  text-align: center;
 }
 
