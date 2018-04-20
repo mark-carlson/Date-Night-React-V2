@@ -180,35 +180,35 @@ class Logon extends Component {
       });
   }
 
-    logout() {
-      this.setState({
-        isLoading: true,
-      });
-        const obj = getFromStorage("Date_Night");
-        if (obj && obj.token) {
-          const { token } = obj;
-          //verifying token
-          fetch("api/account/logout?token=" + token)
-            .then(res => res.json())
-            .then(json => {
-              if (json.success) {
-                this.setState({
-                    token: "", 
-                    isLoading: false 
-                });
-                console.log("before");
-              } else {
-                this.setState({ 
-                    isLoading: false 
-                });
-              }
+  logout() {
+    this.setState({
+      isLoading: true,
+    });
+    const obj = getFromStorage("Date_Night");
+    if (obj && obj.token) {
+      const { token } = obj;
+      //verifying token
+      fetch("api/account/logout?token=" + token)
+        .then(res => res.json())
+        .then(json => {
+          if (json.success) {
+            this.setState({
+              token: "",
+              isLoading: false
             });
+            console.log("before");
           } else {
-            this.setState({ 
-              isLoading: false 
+            this.setState({
+              isLoading: false
             });
-          } console.log('after')
-    }
+          }
+        });
+    } else {
+      this.setState({
+        isLoading: false
+      });
+    } console.log('after')
+  }
 
 
   render() {
@@ -234,11 +234,11 @@ class Logon extends Component {
     }
     if (!token) {
       return (
- 
+
 
         <div>
-          <Modal 
-          trigger={<Button className="container">Sign In</Button>}>
+          <Modal
+            trigger={<Button className="container">Sign In</Button>}>
             {signInError ? <p>{signInError}</p> : null}
             <h4>Welcome Back</h4>
             <input type="email" placeholder="Email" value={signInEmail} onChange={this.onTextboxChangeSignInEmail} />
@@ -247,10 +247,10 @@ class Logon extends Component {
               Sign In
             </Button>
           </Modal>
-       
-     
+
+
           <Modal
-           trigger={<Button className="container">Sign Up</Button>}>
+            trigger={<Button className="container">Sign Up</Button>}>
             {signUpError ? <p>{signUpError}</p> : null}
             <h4>Please sign up</h4>
             <input type="text" placeholder="First Name" value={signUpFirstName} onChange={this.onTextboxChangeSignUpFirstName} />
@@ -261,7 +261,7 @@ class Logon extends Component {
               Sign up
             </Button>
           </Modal>
-        
+
           <Slider>
             <Slide src="../../../img/dinner.jpg" title="Date Night">
               Perfect dates start here
@@ -273,16 +273,16 @@ class Logon extends Component {
               We'll give you some out of the box ideas
             </Slide>
           </Slider>
-          </div>
-     
+        </div>
+
       );
 
     }
 
     return (
       <div>
-        <HomePage logout={this.logout}/>
-       
+        <HomePage logout={this.logout} />
+
       </div>
     );
   }
