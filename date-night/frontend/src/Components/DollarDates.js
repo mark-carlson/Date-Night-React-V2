@@ -1,6 +1,7 @@
 import React from 'react'
 import Nav from './Nav/Nav'
 import { Button, Card, Col, Input, Row, CardTitle } from "react-materialize"
+import Container from './Container/Container';
 
 class DollarDates extends React.Component{
     render(){
@@ -11,7 +12,7 @@ class DollarDates extends React.Component{
 
 
    
-        <div class="container">
+     <Container>
 
         <Card className='blue-grey darken-1' title='Bike Date'>
 
@@ -39,16 +40,16 @@ class DollarDates extends React.Component{
         </Card>
 
 
+        </Container>
 
         </div>
 
-    </div>
-        )
+    )
 
-        return <div className="dollar-page">
-            <Nav logout={this.props.logout}/>
-            <h1>This is going to be the dollar dates page</h1>
-          </div>;
+        // return <div className="dollar-page">
+        //     <Nav logout={this.props.logout}/>
+        //     <h1>This is going to be the dollar dates page</h1>
+        //   </div>;
 
     }
 }

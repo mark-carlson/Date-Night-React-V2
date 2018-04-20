@@ -237,7 +237,7 @@ class Logon extends Component {
       return (
           <div className="screen">
           
-              <Modal trigger={<Button className="container">
+              <Modal trigger={<Button className="container2">
                     Sign In
                   </Button>}>
                 {signInError ? <p>{signInError}</p> : null}
