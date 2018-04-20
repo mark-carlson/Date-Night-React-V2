@@ -4,6 +4,7 @@ import Nav from './Nav/Nav'
 import { Button, Card, Col, Input, Row, CardTitle } from "react-materialize"
 import "./DollarDates"
 
+
 class DollarDates extends React.Component{
     render(){
         return(
@@ -50,6 +51,7 @@ class DollarDates extends React.Component{
 </Card>
 
 
+       
 
         </div>
 
