@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Button, Card, Col, Input, Row, Modal, Slider, Slide } from "react-materialize";
 import "whatwg-fetch";
-import HomePage from "../HomePage"
-import "./Logon.css"
+import HomePage from "../HomePage";
+import "./Logon.css";
 import { getFromStorage, setInStorage } from "../../utils/storage";
-import Container from "../Container/Container";
+// import Container from "../Container/Container";
 
 class Logon extends Component {
   constructor(props) {
@@ -180,7 +180,7 @@ class Logon extends Component {
       });
   }
 
-    logout() {
+    logout () {
       this.setState({
         isLoading: true,
       });
@@ -281,7 +281,6 @@ class Logon extends Component {
           
           </div>
       );
-
     }
 
     return (

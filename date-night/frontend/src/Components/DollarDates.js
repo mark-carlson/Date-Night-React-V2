@@ -1,5 +1,6 @@
 import React from 'react'
 import Nav from './Nav/Nav'
+
 import { Button, Card, Col, Input, Row, CardTitle } from "react-materialize"
 import "./DollarDates"
 
@@ -11,6 +12,7 @@ class DollarDates extends React.Component{
     
             <div className="dollar-page">
                 <Nav />
+                <h1>This is going to be the dollar dates page</h1>
 
 
    
@@ -62,12 +64,6 @@ Date Night 2018. All Rights Reserved.
 
     </div>
         )
-
-        return <div className="dollar-page">
-            <Nav logout={this.props.logout}/>
-            <h1>This is going to be the dollar dates page</h1>
-          </div>;
-
     }
 }
 

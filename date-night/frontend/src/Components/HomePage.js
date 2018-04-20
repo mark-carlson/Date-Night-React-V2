@@ -12,8 +12,8 @@ class HomePage extends React.Component{
                 <div className="home-page">
                 <Nav />
 
-<div className="mainBG">
-<div class="content" >
+                <div className="mainBG">
+                <div class="content" >
 
 
     <div class="row">
