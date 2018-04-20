@@ -4,7 +4,6 @@ import "whatwg-fetch";
 import HomePage from "../HomePage"
 import "./Logon.css"
 import { getFromStorage, setInStorage } from "../../utils/storage";
-// import Container from "../Container/Container";
 
 class Logon extends Component {
   constructor(props) {
@@ -181,6 +180,7 @@ class Logon extends Component {
   }
 
     logout() {
+      console.log('logout button was pushed')
       this.setState({
         isLoading: true,
       });
