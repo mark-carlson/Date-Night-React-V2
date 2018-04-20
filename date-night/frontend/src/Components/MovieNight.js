@@ -13,8 +13,10 @@ class MovieNight extends React.Component{
             <Nav logout={this.props.logout}/>
             <h1>This is going to be the movie night page.</h1>
 
+            <div class="dollardatescard">
+            <div class="dollardatescard-inner">
             <Row>
-              <Col s={3}>
+              <Col s={4}>
                 <h5>Movie</h5>
                 <div>
                   <Dropdown trigger={<Button>Select</Button>}>
@@ -35,13 +37,13 @@ class MovieNight extends React.Component{
                 </Card>
               </Col>
 
-              <Col s={3}>
+              <Col s={4}>
                 <div>
                   <h2>OR</h2>
                 </div>
               </Col>
 
-              <Col s={3}>
+              <Col s={4}>
                 <h5>Dinner</h5>
                 <Dropdown trigger={<Button>Select</Button>}>
                   <NavItem>American</NavItem>
@@ -66,8 +68,16 @@ class MovieNight extends React.Component{
                 </Card>
               </Col>
             </Row>
-
             <Button>Go!</Button>
+            </div>
+            </div>
+            
+           
+            {/* Footer Start */}
+<div class="Footer">
+Date Night 2018. All Rights Reserved.
+</div>
+{/* Footer End */}
           </div>;
     }
 }

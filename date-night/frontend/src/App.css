@@ -68,14 +68,15 @@ padding: 3px 5px;
   display:inline-block;
   margin:0 15px;
   background: yellow;
-  height: 300px;
-  margin-top: 50px;
+  height: 250px;
+  margin-top: 30px;
   margin-bottom: 100px;
 }
 
 .square p  {
   background: yellow;
   font-size: 24px;
+  color: black;
 
 }
 
@@ -85,5 +86,25 @@ padding: 3px 5px;
   padding-top: 10px;
   padding-bottom:5px;
   vertical-align: middle;
+  color: black;
 }
 
+.Footer {
+  background-color: teal;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 50px;
+  font-size: 13px;
+}
+
+h2 {
+  color: black;
+}
+
+.dollardatescard {
+  text-align:center;
+}
+
+.dollardatescard-inner {
+  display:inline-block;
+}

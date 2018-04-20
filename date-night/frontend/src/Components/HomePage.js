@@ -1,6 +1,6 @@
 import React from 'react';
 import Nav from './Nav/Nav';
-import { Button, Card, Col, Input, Row, CardTitle, MediaBox, CardPanel, Dropdown, NavItem } from "react-materialize";
+import { Button, Card, Col, Input, Row, CardTitle, MediaBox, CardPanel, Dropdown, NavItem, Footer } from "react-materialize";
 import "../App.css";
 
 class HomePage extends React.Component{
@@ -28,29 +28,35 @@ class HomePage extends React.Component{
 <div class="circles-parent">
             
     <div class="square"><img src="/img/moviedinner.jpg" style={{width: 250, height: 200}} /> 
-    <p>Dinner & Movie</p>
+    <p><a href="movienight">Dinner & Movie</a></p>
     </div>
             
  
     <div class="square"><img src="/img/spinthewheel3.jpg" style={{width: 250, height: 200}} />
-    <p>Spin the Wheel</p>
+    <p><a href="wheel">Spin the Wheel</a></p>
     </div>
 
 
     <div class="square"><img src="/img/dollardates3.jpg" style={{width: 250, height: 200}} />
-    <p>Dollar Dates</p>
+    <p><a href="dollardates">Dollar Dates</a></p>
     </div>
 
  
     <div class="square"><img src="/img/saved.jpg" style={{width: 250, height: 200}} />
-    <p>Saved Dates</p>
+    <p><a href="#">Saved Dates</a></p>
     </div>
 
 </div>
 
 
-</div> 
 </div>
+</div>
+
+{/* Footer Start */}
+<div class="Footer">
+Date Night 2018. All Rights Reserved.
+</div>
+{/* Footer End */}
 
             </div>       
             
