@@ -13,12 +13,17 @@ a{
 	color:#34495e;	
 }
 
+/* ZIP CODE INPUT */
+#zipcode-wrapper{
+	margin-top: 50px;
+}
 
 
 
 /*WRAPPER*/
 #wrapper{ 
-	margin: 40px auto 0;	
+	/* margin: 0px auto 0;	 */
+	margin-left: -25px;
 	width:266px; 
 	position:relative;
 }

@@ -1,20 +1,27 @@
 import React from 'react'
 import { Button, Table, Col, Card, CardTitle, MediaBox, Row, CardPanel, Dropdown, NavItem } from "react-materialize";
 import Nav from './Nav/Nav'
-import {searchRestaurant} from "../helpers"
 import Yelp from './Yelp/Yelp'
 import './MovieNight.css';
 import Config from './Yelp/Config'
 
-class MovieNight extends React.Component{
+const d = new Date();
+const today = d.getFullYear() + '-' + ("0" + (d.getMonth() + 1)).slice(-2) + '-' + d.getDate();
 
-    state = {
+class MovieNight extends React.Component{
+      state = {
         genre: '',
         foodType: '',
         zipcode: '',
         haveAllUserData: false,
-        data: [{}]
+        restaurantdata: [{}],
+        moviedata:[{}],
+        date: today
     }
+
+
+      // this.setState({date: today})
+
 
     handleUserSelection(type, selection) {
         console.log("selection", selection)
@@ -35,11 +42,12 @@ class MovieNight extends React.Component{
 
     returnYelp(yelpData){
         this.setState({
-            data: yelpData
+            restaurantdata: yelpData
         })
     }
 
     getYelpData() {
+      console.log(this.state.foodType)
         fetch('api/search', {
             headers: {
                 'Accept': 'application/json',
@@ -50,6 +58,7 @@ class MovieNight extends React.Component{
                 genre: this.state.genre,
                 foodType: this.state.foodType,
                 zipcode: this.state.zipcode,
+                date: this.state.date
             })
         }).then((res) => {
             if (res.status === 503) {
@@ -79,10 +88,44 @@ class MovieNight extends React.Component{
             }
         });
     }
+
+    getMovieData() {
+      fetch(`api/searchMovie`, 
+      {
+          headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+          },
+          method: 'post',
+          body: JSON.stringify({
+              genre: this.state.genre,
+              foodType: this.state.foodType,
+              zipcode: this.state.zipcode,
+              date: this.state.date
+          })
+      }
+    ).then((res) => {
+          // if (res.status === 200) {
+          //     this.setState({
+          //         sendSuccessful: false,
+          //         isSent: false,
+          //         isSending: false,
+          //         sendFailure: true
+          //     });
+          // }
+          // console.log('res.json',res.json())
+          return res.json();
+      }).then((data) => {
+          console.log('moviedata', data)
+          // this.setState({moviedata: data});
+      });
+  }
     render()
     {
-        console.log('State from MovieNight', this.state.data[0].name)
+        // console.log('State from MovieNight', this.state.restaurantdata[0])
+        // this.newDate()
         return(
+           
             <div>
                 <Nav />
                 <Row>
@@ -90,13 +133,13 @@ class MovieNight extends React.Component{
                         <div className="movieDiv">
                             <Card header={<CardTitle key="movie" image="/img/movieposter.jpg">Movie Options</CardTitle>} actions={[<a key="movie" href='#'>Results</a>]}>
                                 <Dropdown trigger={<Button>Movie Genre</Button>}>
-                                    <NavItem className="action" onClick={() => {this.handleUserSelection('genre', 'Action')}}>Action</NavItem>
-                                    <NavItem className="adventure" onClick={() => {this.handleUserSelection('genre', 'Adventure')}}>Adventure</NavItem>
-                                    <NavItem className="animation" onClick={() => {this.handleUserSelection('genre', 'Animation')}}>Animation</NavItem>
-                                    <NavItem className="documentary" onClick={() => {this.handleUserSelection('genre', 'Documentary')}}>Documentary</NavItem>
-                                    <NavItem className="sciencFiction" onClick={() => {this.handleUserSelection('genre', 'Science Fiction')}}>Science Fiction</NavItem>
+                                    <NavItem className="action" onClick={() => {this.handleUserSelection('genre', 'action')}}>Action</NavItem>
+                                    <NavItem className="adventure" onClick={() => {this.handleUserSelection('genre', 'adventure')}}>Adventure</NavItem>
+                                    <NavItem className="animation" onClick={() => {this.handleUserSelection('genre', 'animation')}}>Animation</NavItem>
+                                    <NavItem className="documentary" onClick={() => {this.handleUserSelection('genre', 'documentary')}}>Documentary</NavItem>
+                                    <NavItem className="sciencFiction" onClick={() => {this.handleUserSelection('genre', 'scifi')}}>Science Fiction</NavItem>
                                 </Dropdown>
-                                <Button className="findMovie" disabled={!this.state.haveAllUserData} onClick={this.getYelpData.bind(this)}>Find Movie</Button>
+                                <Button className="findMovie" disabled={!this.state.haveAllUserData} onClick={this.getMovieData.bind(this)}>Find Movie</Button>
                             </Card>
                         </div>      
                     </Col>
@@ -107,7 +150,7 @@ class MovieNight extends React.Component{
                             <div>
                                 <input name='zipcode' value={this.state.zipcode} onChange={(event) => {this.handleUserSelection('zipcode', event.target.value)}} className="zipcode"></input>
                             </div>
-                            {this.state.data.map((business, i)=>(
+                            {this.state.restaurantdata.map((business, i)=>(
                                     <div key={i}>
                                         {business.name}
                                     </div>
@@ -120,9 +163,9 @@ class MovieNight extends React.Component{
                         <div className="dinnerDiv">    
                             <Card header={<CardTitle image="/img/foodimage.jpg">Dinner Options</CardTitle>} actions={[<a key="food" href='#'>Results</a>]}>
                                 <Dropdown trigger={<Button>Food Type</Button>} >
-                                    <NavItem className="america" onClick={() => {this.handleUserSelection('foodType', 'american')}} >American</NavItem>
+                                    <NavItem className="america" onClick={() => {this.handleUserSelection('foodType', 'tradamerican')}} >American</NavItem>
                                     <NavItem className="bbq" onClick={() => {this.handleUserSelection('foodType', 'bbq')}}>BBQ</NavItem>
-                                    <NavItem className="brewery" onClick={() => {this.handleUserSelection('foodType', 'brewery')}}>Brewery</NavItem>
+                                    <NavItem className="brewery" onClick={() => {this.handleUserSelection('foodType', 'breweries')}}>Brewery</NavItem>
                                     <NavItem className="chinese" onClick={() => {this.handleUserSelection('foodType', 'chinese')}}>Chinese</NavItem>
                                     <NavItem className="ethiopian" onClick={() => {this.handleUserSelection('foodType', 'ethiopian')}}>Ethiopian</NavItem>
                                     <NavItem className="indian" onClick={() => {this.handleUserSelection('foodType', 'indian')}}>Indian</NavItem>

@@ -5,6 +5,7 @@ import Spinner from "./Spinner/Spinner"
 import {searchActivity} from "../helpers"
 import Result from "./Result"
 
+
 class Wheel extends Component {
 
     constructor(props) {
@@ -18,10 +19,10 @@ class Wheel extends Component {
                 <Spinner setWheelDate={this.props.setWheelDate} />
                 
                 {/* Footer Start */}
-<div class="Footer">
-Date Night 2018. All Rights Reserved.
-</div>
-{/* Footer End */}
+                <div class="Footer">
+                Date Night 2018. All Rights Reserved.
+                </div>
+                {/* Footer End */}
 
 
             </div>
