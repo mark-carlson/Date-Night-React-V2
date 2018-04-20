@@ -1,15 +1,23 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Nav from './Nav/Nav'
 import { Button, Card, Col, Input, Row } from "react-materialize"
 import Spinner from "./Spinner/Spinner"
-// import {test} from "../helpers"
+import {searchActivity} from "../helpers"
+import Result from "./Result"
 
-class Wheel extends React.Component{
+class Wheel extends Component {
+
+    constructor(props) {
+        super(props);
+    }
+  
     render(){
-        return <div className="wheel-page">
-            <Nav logout={this.props.logout}/>
-            <Spinner />
-          </div>;
+        return(
+            <div className="wheel-page">
+                <Nav />
+                <Spinner setWheelDate={this.props.setWheelDate} />
+            </div>
+        )
     }
 }
 
