@@ -16,9 +16,20 @@ class Wheel extends Component {
             <div className="wheel-page">
                 <Nav />
                 <Spinner setWheelDate={this.props.setWheelDate} />
+                
+                {/* Footer Start */}
+<div class="Footer">
+Date Night 2018. All Rights Reserved.
+</div>
+{/* Footer End */}
+
+
             </div>
         )
+
+        
     }
+    
 }
 
 export default Wheel

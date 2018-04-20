@@ -9,7 +9,7 @@ import MovieNight from './Components/MovieNight'
 import Wheel from './Components/Wheel'
 import DollarDates from './Components/DollarDates'
 import NoMatch from './Components/NoMatch'
-// import Logon from './Components/Logon'
+import Logon from './Components/Logon'
 // import registerServiceWorker from './registerServiceWorker';
 
 // ReactDOM.render(<App />, document.getElementById('root'));

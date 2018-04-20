@@ -50,6 +50,7 @@ class Spinner extends Component {
 	}
 
 	render() {
+		console.log(this.state.wheelDate)
 		return (
 			<div className="Spinner">
 				<div id="wrapper">

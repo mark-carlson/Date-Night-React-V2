@@ -4,7 +4,7 @@ import "whatwg-fetch";
 import HomePage from "../HomePage"
 import "./Logon.css"
 import { getFromStorage, setInStorage } from "../../utils/storage";
-import Container from "../Container/Container";
+// import Container from "../Container/Container";
 
 class Logon extends Component {
   constructor(props) {
@@ -180,35 +180,35 @@ class Logon extends Component {
       });
   }
 
-  logout() {
-    this.setState({
-      isLoading: true,
-    });
-    const obj = getFromStorage("Date_Night");
-    if (obj && obj.token) {
-      const { token } = obj;
-      //verifying token
-      fetch("api/account/logout?token=" + token)
-        .then(res => res.json())
-        .then(json => {
-          if (json.success) {
-            this.setState({
-              token: "",
-              isLoading: false
-            });
-            console.log("before");
-          } else {
-            this.setState({
-              isLoading: false
-            });
-          }
-        });
-    } else {
+    logout() {
       this.setState({
-        isLoading: false
+        isLoading: true,
       });
-    } console.log('after')
-  }
+        const obj = getFromStorage("Date_Night");
+        if (obj && obj.token) {
+          const { token } = obj;
+          //verifying token
+          fetch("api/account/logout?token=" + token)
+            .then(res => res.json())
+            .then(json => {
+              if (json.success) {
+                this.setState({
+                    token: "", 
+                    isLoading: false 
+                });
+                console.log("before");
+              } else {
+                this.setState({ 
+                    isLoading: false 
+                });
+              }
+            });
+          } else {
+            this.setState({ 
+              isLoading: false 
+            });
+          } console.log('after')
+    }
 
 
   render() {
@@ -237,7 +237,7 @@ class Logon extends Component {
       return (
           <div className="screen">
           
-              <Modal trigger={<Button className="container">
+              <Modal trigger={<Button className="container2">
                     Sign In
                   </Button>}>
                 {signInError ? <p>{signInError}</p> : null}
