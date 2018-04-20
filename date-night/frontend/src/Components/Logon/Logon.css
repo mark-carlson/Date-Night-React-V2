@@ -5,13 +5,58 @@ h3 {
 
 h4 {
     color: teal;
+    text-align: center;
 }
 
 h5 {
     font-family: Berlin Sans FB Demi;
 }
 
-
 input {
     color: black;
+}
+.container {
+    margin-left: 1225px;
+    width: 100px;
+    margin-top: 10px; 
+    transition: none;
+ 
+}
+
+.container1 {
+    width: 100px;
+    margin-left: 1100px;
+    margin-top: -67px;
+}
+
+.screen {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: white;
+}
+
+
+body {
+  background-color: white;
+}
+
+p {
+    color: black;
+    text-align: center;
+    font-family: Berlin Sans FB Demi; 
+    font-size: 24px;
+
+}
+.btn-flat {
+    color: white;
+}
+
+
+
+.modal-overlay {
+background: 0;
+}
+
+.indicator-item.active {
+    background-color: black;
 }
