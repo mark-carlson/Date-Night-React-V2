@@ -1,6 +1,5 @@
 import React from 'react'
 import Nav from './Nav/Nav'
-
 import { Button, Card, Col, Input, Row, CardTitle } from "react-materialize"
 import "./DollarDates"
 
@@ -10,9 +9,8 @@ class DollarDates extends React.Component {
             <div>
                 <div className="dollar-page">
                     <Nav />
-                    <h1>This is going to be the dollar dates page</h1>
                     <div class="container">
-                        <div><h2>Awesome Date Ideas Under Budget</h2></div>
+                        <div><h2 className="center-align">Awesome Date Ideas Under Budget</h2></div>
                         <div class="dollardatetitle">Sunset Bike Ride</div>
                         <Card className='large' header={<CardTitle image='/img/dollardate-page1-.jpg'></CardTitle>} actions={[<a href='#'></a>]}><div style={{ color: "#566573" }}>The idea started in—where else?—Portland, Oregon. But now many cities have rolled out similar programs that allow folks to cruise around on rented two-wheelers on the cheap. Grab some cruisers and explore the local scene for a few hours.</div>
                         </Card>

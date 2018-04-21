@@ -4,6 +4,7 @@ import Nav from './Nav/Nav'
 import Spinner from "./Spinner/Spinner"
 import {searchActivity} from "../helpers"
 import Result from "./Result"
+import App from "../App.css"
 
 
 class Wheel extends Component {
