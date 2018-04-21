@@ -1,9 +1,9 @@
 import React from 'react'
-import { Button, Table, Col, Card, CardTitle, MediaBox, Row, CardPanel, Dropdown, NavItem } from "react-materialize";
+import { Button, Table, Col, Card, CardTitle, MediaBox, Row, CardPanel, Dropdown, NavItem, Input } from "react-materialize";
 import Nav from './Nav/Nav'
-import Yelp from './Yelp/Yelp'
+// import Yelp from './Yelp/Yelp'
 import './MovieNight.css';
-import Config from './Yelp/Config'
+// import Config from './Yelp/Config'
 
 const d = new Date();
 const today = d.getFullYear() + '-' + ("0" + (d.getMonth() + 1)).slice(-2) + '-' + d.getDate();
@@ -74,18 +74,6 @@ class MovieNight extends React.Component{
         }).then((data) => {
             console.log('data', data)
             this.returnYelp(data.businesses);
-            if (data.message === 'mail sent') {
-                this.setState({
-                    sendSuccessful: true,
-                    sendFailure: false,
-                    email: '',
-                    subject: '',
-                    body: '',
-                    isSent: true,
-                    isSending: false,
-                    emailValid: false
-                });
-            }
         });
     }
 
@@ -105,15 +93,6 @@ class MovieNight extends React.Component{
           })
       }
     ).then((res) => {
-          // if (res.status === 200) {
-          //     this.setState({
-          //         sendSuccessful: false,
-          //         isSent: false,
-          //         isSending: false,
-          //         sendFailure: true
-          //     });
-          // }
-          // console.log('res.json',res.json())
           return res.json();
       }).then((data) => {
           console.log('moviedata', data)
@@ -134,7 +113,7 @@ class MovieNight extends React.Component{
                 <Row>
                     <Col s={4}>
                         <div className="movieDiv">
-                            <Card header={<CardTitle key="movie" image="/img/movieposter.jpg">Movie Options</CardTitle>} actions={[<a key="movie" href='#'>Results</a>]}>
+                            <Card className='large' header={<CardTitle key="movie" image="/img/movieposter.jpg">Movie Options</CardTitle>}>
                                 <Dropdown trigger={<Button>Movie Genre</Button>}>
                                     <NavItem className="action" onClick={() => {this.handleUserSelection('genre', 'action')}}>Action</NavItem>
                                     <NavItem className="adventure" onClick={() => {this.handleUserSelection('genre', 'adventure')}}>Adventure</NavItem>
@@ -148,17 +127,26 @@ class MovieNight extends React.Component{
                     </Col>
 
                     <Col s={4}>                        
+<<<<<<< HEAD
                         <div className="zipcodeDiv">
                             <h3>Enter Zipcode</h3>
+=======
+                        <div className='zipcodeDiv'>
+>>>>>>> ddaf7dca37f8f54118f9eedc76c627e051b60e77
                             <div>
-                                <input name='zipcode' value={this.state.zipcode} onChange={(event) => {this.handleUserSelection('zipcode', event.target.value)}} className="zipcode"></input>
+                                <input name='zipcode' placeholder='Enter Zip Code' className='zipcode' value={this.state.zipcode} onChange={(event) => {this.handleUserSelection('zipcode', event.target.value)}}></input>
                             </div>
                             {this.state.restaurantdata.map((business, i)=>(
+<<<<<<< HEAD
                                     <div>
+=======
+                                    <div className='food_return' key={i}>
+>>>>>>> ddaf7dca37f8f54118f9eedc76c627e051b60e77
                                         {business.name}
                                     </div>
                                 )
                             )}
+<<<<<<< HEAD
 
                             {this.state.moviedata.map((data, i) => (
                                <div key={i}>
@@ -167,11 +155,14 @@ class MovieNight extends React.Component{
                             )
                             )}
                         </div>
+=======
+                            </div>
+>>>>>>> ddaf7dca37f8f54118f9eedc76c627e051b60e77
                     </Col>
 
                     <Col s={4}>
                         <div className="dinnerDiv">    
-                            <Card header={<CardTitle image="/img/foodimage.jpg">Dinner Options</CardTitle>} actions={[<a key="food" href='#'>Results</a>]}>
+                            <Card className='large' header={<CardTitle image="/img/foodimage.jpg">Dinner Options</CardTitle>}>
                                 <Dropdown trigger={<Button>Food Type</Button>} >
                                     <NavItem className="america" onClick={() => {this.handleUserSelection('foodType', 'tradamerican')}} >American</NavItem>
                                     <NavItem className="bbq" onClick={() => {this.handleUserSelection('foodType', 'bbq')}}>BBQ</NavItem>
@@ -192,7 +183,10 @@ class MovieNight extends React.Component{
                     </Col>
                 </Row>
 
-                
+                <div class="Footer">
+                    Date Night 2018. All Rights Reserved.
+                </div>
+
             </div>
             
         )
