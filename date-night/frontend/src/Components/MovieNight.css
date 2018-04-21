@@ -2,3 +2,38 @@
     height: 100%;
     width: 100%;
 }
+
+.Footer {
+    background-color: teal;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    font-size: 13px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .zipcodeDiv {
+      color: black;
+      text-align: center;
+      margin-top: 30px;
+  }
+  
+  .zipcode {
+      text-align: center;
+      margin-left: 50px;
+  }
+
+  .food_return {
+      text-align: center;
+  }
+
+  .findMovie {
+      float: right;
+  }
+
+  .findDate{
+      float: right;
+  }
