@@ -149,7 +149,7 @@ class Spinner extends Component {
 					</div>
 				</Col></Row>
 				<Row><Col className='offset-s5' s={4}>
-					<Button className="button-container" disabled={!this.state.haveAllUserData} onClick={this.getYelpData.bind(this)} >Find Venues Near You!</Button>
+					<Button className="venue-button-container" disabled={!this.state.haveAllUserData} onClick={this.getYelpData.bind(this)} >Find Venues Near You!</Button>
 				</Col></Row>
 				<Row className='result-container'>
 				{this.state.data.map((businesses, i)=>(

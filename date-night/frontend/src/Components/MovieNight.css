@@ -26,6 +26,7 @@
   
   .movienight-page{
       margin-top:50px;
+      margin-bottom:100px;
   }
 
   .zipcode {
@@ -44,3 +45,10 @@
       margin-left:20px;
   }
 
+  /* .card{
+      max-height: 250px;
+  }
+
+  img{
+      max-height: 250px;
+  } */

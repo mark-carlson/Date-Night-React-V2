@@ -159,10 +159,10 @@ class MovieNight extends React.Component {
             <Col hidden={!this.state.haveAllUserData} className="movie-results" s={6}>
               {this.state.moviedata.map((data, i) => (
                 <div key={i}>
-                  <div class="col s6">
-                    <div class="card horizontal">
+                  <div class="col s12">
+                    <div class="card small horizontal">
                       <div class="card-image">
-                        <img src="https://lorempixel.com/100/190/nature/6" />
+                        <img src="../../img/popcorn.jpg" />
                       </div>
                       <div class="card-stacked">
                         <div class="card-content">
@@ -181,7 +181,7 @@ class MovieNight extends React.Component {
               {this.state.restaurantdata.map((business, i) => (
                 <div key={i}>
                   <div class="col s12">
-                    <div class="card horizontal">
+                    <div class="card small horizontal">
                       <div class="card-image">
                         <img src={business.image_url} />
                       </div>

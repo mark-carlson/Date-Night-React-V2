@@ -180,35 +180,35 @@ class Logon extends Component {
       });
   }
 
-    logout() {
-      this.setState({
-        isLoading: true,
-      });
-        const obj = getFromStorage("Date_Night");
-        if (obj && obj.token) {
-          const { token } = obj;
-          //verifying token
-          fetch("api/account/logout?token=" + token)
-            .then(res => res.json())
-            .then(json => {
-              if (json.success) {
-                this.setState({
-                    token: "", 
-                    isLoading: false 
-                });
-                console.log("before");
-              } else {
-                this.setState({ 
-                    isLoading: false 
-                });
-              }
+  logout() {
+    this.setState({
+      isLoading: true,
+    });
+    const obj = getFromStorage("Date_Night");
+    if (obj && obj.token) {
+      const { token } = obj;
+      //verifying token
+      fetch("api/account/logout?token=" + token)
+        .then(res => res.json())
+        .then(json => {
+          if (json.success) {
+            this.setState({
+              token: "",
+              isLoading: false
             });
+            console.log("before");
           } else {
-            this.setState({ 
-              isLoading: false 
+            this.setState({
+              isLoading: false
             });
-          } console.log('after')
-    }
+          }
+        });
+    } else {
+      this.setState({
+        isLoading: false
+      });
+    } console.log('after')
+  }
 
 
   render() {
@@ -235,58 +235,57 @@ class Logon extends Component {
     if (!token) {
 
       return (
-          <div className="screen">
-          
-              <Modal trigger={<Button className="container2">
-                    Sign In
+        <div className="screen">
+          <div className='button-container'>
+            <Modal trigger={<Button className="sign-in-btn">
+              Sign In
                   </Button>}>
-                {signInError ? <p>{signInError}</p> : null}
-                <h4>Welcome Back</h4>
-                <input type="email" placeholder="Email" value={signInEmail} onChange={this.onTextboxChangeSignInEmail} />
-                <input type="password" placeholder="Password" value={signInPassword} onChange={this.onTextboxChangeSignInPassword} />
-                <Button waves="light" onClick={this.onSignIn}>
-                  Sign In
+              {signInError ? <p>{signInError}</p> : null}
+              <h4>Welcome Back</h4>
+              <input type="email" placeholder="Email" value={signInEmail} onChange={this.onTextboxChangeSignInEmail} />
+              <input type="password" placeholder="Password" value={signInPassword} onChange={this.onTextboxChangeSignInPassword} />
+              <Button waves="light" onClick={this.onSignIn}>
+                Sign In
                 </Button>
-              </Modal>
-           
-              <Modal trigger={<Button className="container1">
-                    Sign Up
+            </Modal>
+            <Modal trigger={<Button className="sign-up-btn">
+              Sign Up
                   </Button>}>
-                {signUpError ? <p>{signUpError}</p> : null}
-                <h4>Please sign up</h4>
-                <input type="text" placeholder="First Name" value={signUpFirstName} onChange={this.onTextboxChangeSignUpFirstName} />
-                <input type="text" placeholder="Last Name" value={signUpLastName} onChange={this.onTextboxChangeSignUpLastName} />
-                <input type="email" placeholder="Email" value={signUpEmail} onChange={this.onTextboxChangeSignUpEmail} />
-                <input type="password" placeholder="Password" value={signUpPassword} onChange={this.onTextboxChangeSignUpPassword} />
-                <Button waves="light" onClick={this.onSignUp}>
-                  Sign up
+              {signUpError ? <p>{signUpError}</p> : null}
+              <h4>Please sign up</h4>
+              <input type="text" placeholder="First Name" value={signUpFirstName} onChange={this.onTextboxChangeSignUpFirstName} />
+              <input type="text" placeholder="Last Name" value={signUpLastName} onChange={this.onTextboxChangeSignUpLastName} />
+              <input type="email" placeholder="Email" value={signUpEmail} onChange={this.onTextboxChangeSignUpEmail} />
+              <input type="password" placeholder="Password" value={signUpPassword} onChange={this.onTextboxChangeSignUpPassword} />
+              <Button waves="light" onClick={this.onSignUp}>
+                Sign up
                 </Button>
-              </Modal>
-           
-              <Slider>
-                <Slide src="../../../img/dinner.jpg" title="Date Night">
-                  Perfect Dates Start Here
-                </Slide>
-                <Slide src="../../../img/auditorium.jpg" title="Indecisive?" placement="left">
-                  We'll help you find the perfect Dinner & Movie date
-                </Slide>
-                <Slide src="./../../img/picnic.jpg" title="Want Something Different?" placement="right">
-                  We'll give you some out of the box ideas
-                </Slide>
-              </Slider>
-            <p> Welcome to Date Night, the App that creates perfect dates for everyone.
-            </p>
-            <p>Sign Up or Log In to start your dating experience today!
-            </p>
-          
+            </Modal>
           </div>
+          <Slider>
+            <Slide src="../../../img/dinner.jpg" title="Date Night">
+              Perfect Dates Start Here
+                </Slide>
+            <Slide src="../../../img/auditorium.jpg" title="Indecisive?" placement="left">
+              We'll help you find the perfect Dinner & Movie date
+                </Slide>
+            <Slide src="./../../img/picnic.jpg" title="Want Something Different?" placement="right">
+              We'll give you some out of the box ideas
+                </Slide>
+          </Slider>
+          <p className="homepage-blk"> Welcome to Date Night, the App that creates perfect dates for everyone.
+            </p>
+          <p className="homepage-blk">Sign Up or Log In to start your dating experience today!
+            </p>
+
+        </div>
       );
 
     }
 
     return (
       <div>
-        <HomePage logout={this.logout}/>
+        <HomePage logout={this.logout} />
       </div>
     );
   }
