@@ -5,6 +5,7 @@ import HomePage from "../HomePage"
 import "./Logon.css"
 import { getFromStorage, setInStorage } from "../../utils/storage";
 
+
 class Logon extends Component {
   constructor(props) {
     super(props);
@@ -180,7 +181,6 @@ class Logon extends Component {
   }
 
     logout() {
-      console.log('logout button was pushed')
       this.setState({
         isLoading: true,
       });

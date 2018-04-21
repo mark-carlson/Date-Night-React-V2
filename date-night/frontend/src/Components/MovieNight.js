@@ -117,9 +117,12 @@ class MovieNight extends React.Component{
           return res.json();
       }).then((data) => {
           console.log('moviedata', data)
-          // this.setState({moviedata: data});
+          this.setState({moviedata: data});
       });
   }
+
+  
+
     render()
     {
         // console.log('State from MovieNight', this.state.restaurantdata[0])
@@ -145,16 +148,23 @@ class MovieNight extends React.Component{
                     </Col>
 
                     <Col s={4}>                        
-                        <div>
+                        <div className="zipcodeDiv">
                             <h3>Enter Zipcode</h3>
                             <div>
                                 <input name='zipcode' value={this.state.zipcode} onChange={(event) => {this.handleUserSelection('zipcode', event.target.value)}} className="zipcode"></input>
                             </div>
                             {this.state.restaurantdata.map((business, i)=>(
-                                    <div key={i}>
+                                    <div>
                                         {business.name}
                                     </div>
                                 )
+                            )}
+
+                            {this.state.moviedata.map((data, i) => (
+                               <div key={i}>
+                                    {data.title}
+                                    </div>
+                            )
                             )}
                         </div>
                     </Col>
