@@ -127,26 +127,16 @@ class MovieNight extends React.Component{
                     </Col>
 
                     <Col s={4}>                        
-<<<<<<< HEAD
-                        <div className="zipcodeDiv">
-                            <h3>Enter Zipcode</h3>
-=======
                         <div className='zipcodeDiv'>
->>>>>>> ddaf7dca37f8f54118f9eedc76c627e051b60e77
                             <div>
                                 <input name='zipcode' placeholder='Enter Zip Code' className='zipcode' value={this.state.zipcode} onChange={(event) => {this.handleUserSelection('zipcode', event.target.value)}}></input>
                             </div>
                             {this.state.restaurantdata.map((business, i)=>(
-<<<<<<< HEAD
-                                    <div>
-=======
                                     <div className='food_return' key={i}>
->>>>>>> ddaf7dca37f8f54118f9eedc76c627e051b60e77
                                         {business.name}
                                     </div>
                                 )
                             )}
-<<<<<<< HEAD
 
                             {this.state.moviedata.map((data, i) => (
                                <div key={i}>
@@ -155,9 +145,6 @@ class MovieNight extends React.Component{
                             )
                             )}
                         </div>
-=======
-                            </div>
->>>>>>> ddaf7dca37f8f54118f9eedc76c627e051b60e77
                     </Col>
 
                     <Col s={4}>
