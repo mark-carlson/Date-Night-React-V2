@@ -6,7 +6,7 @@ import helmet from 'helmet';
 import compression from 'compression';
 import path from 'path';
 const mongoose = require("mongoose");
-// const port = process.env.PORT || 3006;
+const port = process.env.PORT || 3001;
 
 import env from './config/env';
 console.log('env top', env);

@@ -43,7 +43,7 @@ var _api2 = _interopRequireDefault(_api);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mongoose = require("mongoose");
-// const port = process.env.PORT || 3006;
+var port = process.env.PORT || 3006;
 
 console.log('env top', _env2.default);
 
@@ -87,6 +87,9 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/datenightusers"
 // API routes - list routes individually
 
 require('./routes/api/signin')(app);
+require('./routes/api/search')(app);
+require('./routes/api/wheelSearch')(app);
+require('./routes/api/searchMovie')(app);
 
 // Load React App
 // Serve HTML file for production
