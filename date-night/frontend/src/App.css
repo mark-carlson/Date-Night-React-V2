@@ -107,6 +107,10 @@ h2 {
   color: black;
 }
 
+.dollar-page{
+  margin-bottom:100px;
+}
+
 .dollardatescard {
   text-align:center;
 }
@@ -127,3 +131,10 @@ h3 {
   text-align: center;
 }
 
+html { 
+  background: url(./Components/Spinner/cjl-background.gif) repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

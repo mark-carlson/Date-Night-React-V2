@@ -1,12 +1,16 @@
 
 
-*{	margin:0;	padding:0; }
+*{	margin:0;	padding:0; background-color:transparent;}
 
 body{
-	background:#eaeaea;
+	background-color:transparent;
 	color:#fff;
 	font-size:18px;
 	font-family: 'Exo 2', sans-serif;
+}
+
+.Spinner{
+	background-color: transparent;
 }
 
 a{
@@ -20,6 +24,7 @@ a{
 
 /* WHEEL-DATE-RESULTS */
 .result-container{
+	background-color:transparent;
 	margin-bottom:100px;
 }
 p{
@@ -294,11 +299,6 @@ opacity:0.1;
 .spin {
   -webkit-animation: hh 0.1s; /* Chrome, Safari, Opera */
     animation: hh 0.1s;
-}
-
-
-body {
-	background: #fff;
 }
 
 

@@ -149,11 +149,11 @@ class Spinner extends Component {
 					</div>
 				</Col></Row>
 				<Row><Col className='offset-s5' s={4}>
-					<Button className="findDate" disabled={!this.state.haveAllUserData} onClick={this.getYelpData.bind(this)} >Find Venues Near You!</Button>
+					<Button className="venue-button-container" disabled={!this.state.haveAllUserData} onClick={this.getYelpData.bind(this)} >Find Venues Near You!</Button>
 				</Col></Row>
 				<Row className='result-container'>
 				{this.state.data.map((businesses, i)=>(
-				<div class="col s2">
+				<div class="col s6 m2">
 					<div  hidden={!this.state.haveAllUserData} class="card small">
 						<div class="card-image">
 							<img class='card-img' src={businesses.image_url} />

@@ -1,8 +1,3 @@
-.card {
-    height: 100%;
-    width: 100%;
-}
-
 .Footer {
     background-color: teal;
     padding-top: 20px;
@@ -15,15 +10,27 @@
     width: 100%;
   }
 
-  .zipcodeDiv {
+  #selection-div {
       color: black;
       text-align: center;
-      margin-top: 30px;
+      margin-bottom: 100px;
+  }
+
+  button{
+      min-width: 200px;
+  }
+
+  h5{
+      text-align: center;
   }
   
+  .movienight-page{
+      margin-top:50px;
+      margin-bottom:100px;
+  }
+
   .zipcode {
       text-align: center;
-      margin-left: 50px;
   }
 
   .food_return {
@@ -31,9 +38,17 @@
   }
 
   .findMovie {
-      float: right;
-  }
+    margin-left:20px;
+}
 
   .findDate{
-      float: right;
+      margin-left:20px;
   }
+
+  /* .card{
+      max-height: 250px;
+  }
+
+  img{
+      max-height: 250px;
+  } */
