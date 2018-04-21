@@ -19,9 +19,27 @@ a{
 }
 
 /* WHEEL-DATE-RESULTS */
-.wheel-date-result{
-	color:black
+.result-container{
+	margin-bottom:100px;
 }
+p{
+	color:teal;
+	font-size:16px;
+}
+.card{
+	/* background-color: #ffffb3; */
+	color:teal;
+}
+
+.card-title{
+	font-size: 12px;
+	color: yellow;
+}
+.card-img{
+	min-width: 200px;
+	height: auto;
+}
+
 
 /*WRAPPER*/
 #wrapper{ 

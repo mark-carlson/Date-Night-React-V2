@@ -151,27 +151,20 @@ class Spinner extends Component {
 				<Row><Col className='offset-s5' s={4}>
 					<Button className="findDate" disabled={!this.state.haveAllUserData} onClick={this.getYelpData.bind(this)} >Find Venues Near You!</Button>
 				</Col></Row>
-				<Row>
+				<Row className='result-container'>
 				{this.state.data.map((businesses, i)=>(
-
-					<div class="col s12 m7">
-					<h2 class="header">{businesses.name}</h2>
-					<div class="card horizontal">
-					  <div class="card-image">
-						<img src={businesses.img_url} />
-					  </div>
-					  <div class="card-stacked">
+				<div class="col s2">
+					<div  hidden={!this.state.haveAllUserData} class="card small">
+						<div class="card-image">
+							<img class='card-img' src={businesses.image_url} />
+						</div>
 						<div class="card-content">
-						  <p>I am a very simple card. I am good at containing small bits of information.</p>
+							<p>{businesses.name}</p>
+							<p>{businesses.display_phone}</p>
 						</div>
-						<div class="card-action">
-						  <a href="#">This is a link</a>
-						</div>
-					  </div>
 					</div>
-				  </div>
+				</div>
 				))}
-
 				</Row>
 				</div>
 			)
