@@ -126,7 +126,7 @@ class Spinner extends Component {
 		const {haveAllUserData} = this.state;
 		return (
 			<div className="col s6 m2" key={i}>
-				<div hidden={!this.state.haveAllUserData} className="card small">
+				<div hidden={!haveAllUserData} className="card small">
 					<div className="card-image">
 						<img className='card-img' src={business.image_url} />
 					</div>
