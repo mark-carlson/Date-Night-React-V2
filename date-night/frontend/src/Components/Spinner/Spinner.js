@@ -12,7 +12,7 @@ class Spinner extends Component {
 			degree: 1800,
 			click: 1,
 			totalDegree: 0,
-			data: [{}],
+			data: [],
 			haveAllUserData: false
 		}
 	}
@@ -79,7 +79,7 @@ class Spinner extends Component {
 	returnYelp(yelpData) {
 		this.setState({
 			data: yelpData
-		})
+		});
 	}
 
 	getYelpData() {
@@ -122,17 +122,35 @@ class Spinner extends Component {
 		});
 	}
 
+	business_card(business, i) {
+		return (
+			<div className="col s6 m2" key={i}>
+				<div hidden={!this.state.haveAllUserData} className="card small">
+					<div className="card-image">
+						<img className='card-img' src={business.image_url} />
+					</div>
+					<div className="card-content">
+						<p>{business.name}</p>
+						<p>{business.display_phone}</p>
+						<p>{business.location.address1}</p>
+					</div>
+				</div>
+			</div>
+		)
+	}
+
 	render() {
-		console.log(this.state.wheelDate, this.state.zipcode, this.state.haveAllUserData, this.state.click)
+		console.log(this.state.wheelDate, this.state.zipcode, this.state.haveAllUserData, this.state.click);
+		const {data, haveAllUserData, totalDegree, zipcode} = this.state;
 		return (
 			<div className="Spinner">
 				<Row id='zipcode-wrapper'><Col className='offset-s5' s={4}>
-					<Input name='zipcode' label='Enter Zip Code' className="zipcode" value={this.state.zipcode} onChange={(event) => { this.handleUserSelection('zipcode', event.target.value) }} />
+					<Input name='zipcode' label='Enter Zip Code' className="zipcode" value={zipcode} onChange={(event) => { this.handleUserSelection('zipcode', event.target.value) }} />
 				</Col></Row>
 				<Row><Col className='offset-s5' s={4}>
 					<div id="wrapper">
 						<div id="wheel">
-							<div id="inner-wheel" style={{ 'transform': `rotate(${this.state.totalDegree}deg)` }}>
+							<div id="inner-wheel" style={{ 'transform': `rotate(${totalDegree}deg)` }}>
 								<div className="sec"><span className="fa"><i className="medium material-icons">pets</i></span></div>
 								<div className="sec"><span className="fa"><i className="medium material-icons">mic</i></span></div>
 								<div className="sec"><span className="fa"><i className="medium material-icons">music_note</i></span></div>
@@ -149,29 +167,17 @@ class Spinner extends Component {
 					</div>
 				</Col></Row>
 				<Row><Col className='offset-s5' s={4}>
-					<Button className="venue-button-container" disabled={!this.state.haveAllUserData} onClick={this.getYelpData.bind(this)} >Find Venues Near You!</Button>
+					<Button className="venue-button-container" disabled={!haveAllUserData} onClick={this.getYelpData.bind(this)} >Find Venues Near You!</Button>
 				</Col></Row>
 				<Row className='result-container'>
-				{this.state.data.map((businesses, i)=>(
-				<div class="col s6 m2">
-					<div  hidden={!this.state.haveAllUserData} class="card small">
-						<div class="card-image">
-							<img class='card-img' src={businesses.image_url} />
-						</div>
-						<div class="card-content">
-							<p>{businesses.name}</p>
-							<p>{businesses.display_phone}</p>
-						</div>
-					</div>
-				</div>
-				))}
+				{data.map((business, i) => this.business_card(business, i))}
 				</Row>
 				</div>
 			)
 		}
 	}
-	
-	
+
+
 	export default Spinner;
 	// 	{this.state.data.map((businesses, i)=>(
 	// 	<Card>

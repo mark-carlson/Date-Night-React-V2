@@ -12,15 +12,15 @@ class Wheel extends Component {
     constructor(props) {
         super(props);
     }
-  
+
     render(){
         return(
             <div className="wheel-page">
                 <Nav />
                 <Spinner setWheelDate={this.props.setWheelDate} />
-                
+
                 {/* Footer Start */}
-                <div class="Footer">
+                <div className="Footer">
                 Date Night 2018. All Rights Reserved.
                 </div>
                 {/* Footer End */}
@@ -29,9 +29,9 @@ class Wheel extends Component {
             </div>
         )
 
-        
+
     }
-    
+
 }
 
 export default Wheel
