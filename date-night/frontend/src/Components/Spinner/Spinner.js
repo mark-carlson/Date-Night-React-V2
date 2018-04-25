@@ -123,6 +123,7 @@ class Spinner extends Component {
 	}
 
 	business_card(business, i) {
+		const {haveAllUserData} = this.state;
 		return (
 			<div className="col s6 m2" key={i}>
 				<div hidden={!this.state.haveAllUserData} className="card small">
